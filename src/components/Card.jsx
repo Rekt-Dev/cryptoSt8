@@ -26,10 +26,7 @@ export let Card = (props) => {
   return (
     <div>
       <div>
-        <div
-          className="card"
-          onClick={() => nav(`opencoin`, { state: coin[0].rank })}
-        >
+        <div className="card" onClick={() => nav(`opencoin`)}>
           <img
             onError={({ currentTarget }) => {
               currentTarget.onerror = null; // prevents looping
