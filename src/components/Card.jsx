@@ -34,6 +34,7 @@ export let Card = (props) => {
                 "http://books.google.com/books/content?id=FDJBgvXyZrsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";
             }}
             alt=" 3 cats"
+            btcPrice={props.btcPrice}
             height="300"
             width="300"
             src={props.imgSrc}
@@ -41,7 +42,10 @@ export let Card = (props) => {
             onMouseOver={() => console.log("into hover")}
           />
           <div style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}></div>
-          <p>Coin name: {props.btcsPrice}</p>
+          <p>Coin name: {props.btcPrice}</p>
+          <p>Coin price: {props.btcPrice}</p>
+          <p>Coin volume: {props.obj[2]}</p>
+          <p>Coin name: {props.btcPrice}</p>
 
           <p></p>
         </div>
