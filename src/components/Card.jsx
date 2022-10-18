@@ -35,23 +35,20 @@ export let Card = (props) => {
             }}
             alt=" 3 cats"
             btcPrice={props.btcPrice}
-            height="300"
-            width="300"
+            height="50%"
+            width="100%"
+            coinPrice={coinPrice}
             src={props.imgSrc}
             onMouseOut={() => console.log("out of hover")}
             onMouseOver={() => console.log("into hover")}
           />
           <div style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}></div>
           <p>Coin name: {props.btcPrice}</p>
-          <p>Coin price: {props.btcPrice}</p>
-          <p>Coin volume: {props.obj[2]}</p>
-          <p>Coin name: {props.btcPrice}</p>
-
-          <p></p>
+          <p>Coin price: {props.ada}</p>
+          <p>Coin name: {props.toilethsPrice}</p>
+          <p>Coin price: {props.coinPrice}</p>
         </div>
       </div>
-      <br />
-      <br />
     </div>
   );
 };

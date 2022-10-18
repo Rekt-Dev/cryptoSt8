@@ -133,11 +133,13 @@ export default function App() {
               ]}
             />
           </div>
-          <Card
+          {/*   <Card
             obj={coins}
             imgSrc={`https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTfPxeHj8JUkN4fLzqo_L5NPrK-aJPkSJlxttC4RGuB8jEEojKw`}
-            btcPrice={Number(btcsPrice)}
-          />
+            btcPrice={btcsPrice}
+            toilethsPrice={toilethsPrice}
+            ada={adasPrice}
+          /> */}
           <Mcap function={getData} />
         </div>
 
