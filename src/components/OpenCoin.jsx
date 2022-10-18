@@ -1,6 +1,29 @@
-import { React, useNavigate } from "react";
+import { React, useNavigate, useEffect } from "react";
 
 export let OpenCoin = (props) => {
+  useEffect(() => {
+    const oneTimer = setTimeout(() => {
+      getData();
+      setCoins(coins);
+      console.log(
+        `this is jsonData from default useeffect in opencoin ${jsonData}`
+      );
+    }, 1000);
+    return () => clearTimeout(oneTimer);
+  }, []);
+  //uesEffect runs every 85 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getData();
+      setJsonData();
+
+      console.log(
+        `this is jsonData from 85 sec useeffect in opencoin ${jsonData}`
+      );
+    }, 85000);
+    return () => clearInterval(interval);
+  });
+
   function truncate(str) {
     if (str) {
       return str.length > 17 ? str.substring(0, 13) + "..." : str;
@@ -21,12 +44,13 @@ export let OpenCoin = (props) => {
   //const artworkId = props.item.image_id;
   //let constructedLink = imageStartLink + artworkId + imageEndLink;
 
-  const navigate = useNavigate();
-
+  /*   const navigate = useNavigate();
+   */
   return (
     <div>
       <div>
-        <div className="OpenCoin" onClick={() => navigate(`opencoin`)}>
+        <div className="OpenCoin">
+          <Card coinPrice={coins[0].price} />
           <img
             onError={({ currentTarget }) => {
               currentTarget.onerror = null; // prevents looping

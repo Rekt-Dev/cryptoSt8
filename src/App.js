@@ -11,7 +11,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useNavigate
+  useNavigate,
 } from "react-router-dom";
 /* import { FinancialChart } from "../components/FinancialChart/FinancialChart";
  */
@@ -77,7 +77,7 @@ export default function App() {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": `*`,
       "x-access-token": apiKey,
-      search: "Bit"
+      search: "Bit",
     });
 
     await fetch(`${corsAnywhere}${url}`)
@@ -129,14 +129,17 @@ export default function App() {
                 dogesPrice,
                 dotsPrice,
                 maticsPrice,
-                daisPrice
+                daisPrice,
               ]}
             />
           </div>
-          <Card
+          {/*   <Card
+            obj={coins}
             imgSrc={`https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTfPxeHj8JUkN4fLzqo_L5NPrK-aJPkSJlxttC4RGuB8jEEojKw`}
             btcPrice={btcsPrice}
-          />
+            toilethsPrice={toilethsPrice}
+            ada={adasPrice}
+          /> */}
           <Mcap function={getData} />
         </div>
 
@@ -165,7 +168,7 @@ export default function App() {
                 dogesPrice,
                 dotsPrice,
                 maticsPrice,
-                daisPrice
+                daisPrice,
               ]}
               function={getData}
             />
